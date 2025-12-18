@@ -3,7 +3,7 @@
 var openWin = [];
 var todoQueue = [];
 var config = {
-    score: "5",
+    score: "1",
     comment: "감사합니다."
 };
 
@@ -13,7 +13,7 @@ if (!window.hasListener) {
     chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         if (request.action == "doEvalLec") {
             todoQueue = request.source;
-            config.score = request.score || "5";
+            config.score = request.score || "1";
             config.comment = request.comment || "감사합니다.";
             do_evallec(todoQueue);
         }
@@ -117,4 +117,5 @@ function do_evallec(j) {
         j.shift();
         do_evallec(j);
     }
+
 }
