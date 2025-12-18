@@ -4,6 +4,8 @@
 마지막 업데이트:2025년 12월 18일
 직전 업데이트:2022년 6월 2일
 
+https://chromewebstore.google.com/detail/autolcevl/ndjcifgineaondcgdlefgclegcpbdigf
+
 # 파일 설명
 
 icon.png : 아이콘 그림
