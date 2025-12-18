@@ -3,19 +3,57 @@
     <head>
         <meta charset="utf-8">
         <style>
-            BODY {width : 600px;}
+            body { width: 400px; padding: 10px; font-family: sans-serif; }
+            table { width: 100%; border-collapse: collapse; margin-bottom: 10px; font-size: 12px; }
+            td { border: 1px solid #ddd; padding: 5px; text-align: center; }
+            th { background: #f0f0f0; padding: 5px; }
+            
+            .control-panel { border-top: 2px solid #eee; padding-top: 10px; margin-top: 10px; }
+            .input-group { margin-bottom: 10px; }
+            label { display: block; font-weight: bold; margin-bottom: 3px; }
+            select, textarea { width: 100%; box-sizing: border-box; }
+            textarea { height: 60px; resize: vertical; }
+            
+            button { width: 100%; height: 40px; background: #007bff; color: white; border: none; font-size: 14px; cursor: pointer; border-radius: 4px; }
+            button:hover { background: #0056b3; }
         </style>
         <script src="popup.js"></script>
     </head>
     <body>
         <table>
+            <thead>
+                <tr>
+                    <th>강의명</th>
+                    <th>상태</th>
+                    <th>선택</th>
+                </tr>
+            </thead>
+            <tbody id="lecture-list"></tbody>
         </table>
-        <button>
-            해줘
-        </button>
-        <details>
+
+        <div class="control-panel">
+            <div class="input-group">
+                <label for="scoreSelect">평가 점수 선택</label>
+                <select id="scoreSelect">
+                    <option value="5" selected>5점 (매우 그렇다)</option>
+                    <option value="4">4점 (그렇다)</option>
+                    <option value="3">3점 (보통이다)</option>
+                    <option value="2">2점 (그렇지 않다)</option>
+                    <option value="1">1점 (매우 그렇지 않다)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="commentText">서술형 문답 (50자 이상 권장)</label>
+                <textarea id="commentText" placeholder="예: 수업이 유익했습니다. (비워두면 자동 생성)">한 학기 동안 열정적인 강의 감사합니다. 수업 내용이 매우 알차고 유익하여 많은 것을 배울 수 있었습니다.</textarea>
+            </div>
+
+            <button id="executeBtn">선택한 강의 일괄 평가하기</button>
+        </div>
+
+        <details style="margin-top: 10px; color: #888;">
             <summary>피드백 보내기</summary>
-            <input readonly></input>
+            <input readonly style="width:100%"></input>
         </details>
     </body>
 </html>

@@ -5,7 +5,7 @@ return ErrorHtml
 
 }
  
-chrome.extension.sendMessage({
+chrome.runtime.sendMessage({
     action: "feedback",
     source: feedback(document)
 });
