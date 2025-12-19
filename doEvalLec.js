@@ -108,7 +108,11 @@ function do_evallec(j) {
         }
 
         // 팝업 열기
-        openWin[jv] = window.open(targetUrl, "evalPopup" + jv);
+        // 창 크기를 지정하면 새 탭이 아니라 '새 창(팝업)'으로 뜹니다.
+        // width=900, height=800: 창 크기
+        // left=100, top=100: 창이 뜨는 모니터 위치
+        var windowFeatures = "width=900,height=800,left=100,top=100,scrollbars=yes,resizable=yes";
+        openWin[jv] = window.open(targetUrl, "evalPopup" + jv, windowFeatures);
         
         // 팝업 로딩 체크 시작
         setTimeout(function() { check(j); }, 1000);
@@ -119,3 +123,4 @@ function do_evallec(j) {
     }
 
 }
+
